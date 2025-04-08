@@ -6,7 +6,9 @@ const fruits = require("./routes /fruits") //importing the fruits route
 //assigning express to the app
 
 // you can choose any port number above 1024. You have to close the port when finished or use a new one.
-
+app.get('/', (req, res) => {
+  res.send('Hello Fruity') 
+})
 
  
 app.use(express.json()) //this is to parse the json data.    
