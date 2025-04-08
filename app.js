@@ -1,4 +1,5 @@
 const express = require("express"); //importing express
+const cors = require("cors"); //importing cors built in middleware for express. This is to allow cross origin resource sharing. This is to allow the frontend to access the backend.
 const app = express()
 const fruits = require("./routes /fruits") //importing the fruits route
 
@@ -10,7 +11,8 @@ app.get('/', (req, res) => {
   res.send('Hello Fruity') 
 })
 
- 
+app.use(cors()) //this is to allow cross origin resource sharing. 
+// This is to allow the frontend to access the backend. no need for next.
 app.use(express.json()) //this is to parse the json data.    
 app.use('/fruits', fruits)
     //this is the root route.
